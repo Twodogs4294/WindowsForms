@@ -35,11 +35,6 @@ namespace WindowsForms
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.readToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.EquipmentTpyeBox = new System.Windows.Forms.ComboBox();
-            this.EquipmentTypeText = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.RarityBox = new System.Windows.Forms.ComboBox();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.宗门ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.绿ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,6 +42,11 @@ namespace WindowsForms
             this.天地灵宝ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.先天ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.后天ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.EquipmentTpyeBox = new System.Windows.Forms.ComboBox();
+            this.EquipmentTypeText = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.RarityBox = new System.Windows.Forms.ComboBox();
             this.WuXingText = new System.Windows.Forms.Label();
             this.WuXingBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -120,15 +120,67 @@ namespace WindowsForms
             // readToolStripMenuItem
             // 
             this.readToolStripMenuItem.Name = "readToolStripMenuItem";
-            this.readToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.readToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.readToolStripMenuItem.Text = "Read";
             this.readToolStripMenuItem.Click += new System.EventHandler(this.readToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.saveToolStripMenuItem.Text = "Save";
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.宗门ToolStripMenuItem,
+            this.天地灵宝ToolStripMenuItem});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(42, 21);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // 宗门ToolStripMenuItem
+            // 
+            this.宗门ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.绿ToolStripMenuItem,
+            this.蓝ToolStripMenuItem});
+            this.宗门ToolStripMenuItem.Name = "宗门ToolStripMenuItem";
+            this.宗门ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.宗门ToolStripMenuItem.Text = "宗门制式装备";
+            this.宗门ToolStripMenuItem.Click += new System.EventHandler(this.宗门ToolStripMenuItem_Click);
+            // 
+            // 绿ToolStripMenuItem
+            // 
+            this.绿ToolStripMenuItem.Name = "绿ToolStripMenuItem";
+            this.绿ToolStripMenuItem.Size = new System.Drawing.Size(88, 22);
+            this.绿ToolStripMenuItem.Text = "绿";
+            // 
+            // 蓝ToolStripMenuItem
+            // 
+            this.蓝ToolStripMenuItem.Name = "蓝ToolStripMenuItem";
+            this.蓝ToolStripMenuItem.Size = new System.Drawing.Size(88, 22);
+            this.蓝ToolStripMenuItem.Text = "蓝";
+            // 
+            // 天地灵宝ToolStripMenuItem
+            // 
+            this.天地灵宝ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.先天ToolStripMenuItem,
+            this.后天ToolStripMenuItem});
+            this.天地灵宝ToolStripMenuItem.Name = "天地灵宝ToolStripMenuItem";
+            this.天地灵宝ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.天地灵宝ToolStripMenuItem.Text = "天地灵宝";
+            // 
+            // 先天ToolStripMenuItem
+            // 
+            this.先天ToolStripMenuItem.Name = "先天ToolStripMenuItem";
+            this.先天ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.先天ToolStripMenuItem.Text = "先天";
+            // 
+            // 后天ToolStripMenuItem
+            // 
+            this.后天ToolStripMenuItem.Name = "后天ToolStripMenuItem";
+            this.后天ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.后天ToolStripMenuItem.Text = "后天";
             // 
             // EquipmentTpyeBox
             // 
@@ -182,58 +234,6 @@ namespace WindowsForms
             this.RarityBox.TabIndex = 5;
             this.RarityBox.Text = "灰";
             this.RarityBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.宗门ToolStripMenuItem,
-            this.天地灵宝ToolStripMenuItem});
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(42, 21);
-            this.editToolStripMenuItem.Text = "Edit";
-            // 
-            // 宗门ToolStripMenuItem
-            // 
-            this.宗门ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.绿ToolStripMenuItem,
-            this.蓝ToolStripMenuItem});
-            this.宗门ToolStripMenuItem.Name = "宗门ToolStripMenuItem";
-            this.宗门ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.宗门ToolStripMenuItem.Text = "宗门制式装备";
-            this.宗门ToolStripMenuItem.Click += new System.EventHandler(this.宗门ToolStripMenuItem_Click);
-            // 
-            // 绿ToolStripMenuItem
-            // 
-            this.绿ToolStripMenuItem.Name = "绿ToolStripMenuItem";
-            this.绿ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.绿ToolStripMenuItem.Text = "绿";
-            // 
-            // 蓝ToolStripMenuItem
-            // 
-            this.蓝ToolStripMenuItem.Name = "蓝ToolStripMenuItem";
-            this.蓝ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.蓝ToolStripMenuItem.Text = "蓝";
-            // 
-            // 天地灵宝ToolStripMenuItem
-            // 
-            this.天地灵宝ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.先天ToolStripMenuItem,
-            this.后天ToolStripMenuItem});
-            this.天地灵宝ToolStripMenuItem.Name = "天地灵宝ToolStripMenuItem";
-            this.天地灵宝ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.天地灵宝ToolStripMenuItem.Text = "天地灵宝";
-            // 
-            // 先天ToolStripMenuItem
-            // 
-            this.先天ToolStripMenuItem.Name = "先天ToolStripMenuItem";
-            this.先天ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.先天ToolStripMenuItem.Text = "先天";
-            // 
-            // 后天ToolStripMenuItem
-            // 
-            this.后天ToolStripMenuItem.Name = "后天ToolStripMenuItem";
-            this.后天ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.后天ToolStripMenuItem.Text = "后天";
             // 
             // WuXingText
             // 
@@ -438,6 +438,7 @@ namespace WindowsForms
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(121, 21);
             this.textBox1.TabIndex = 25;
+            this.textBox1.Text = "EquipmentName";
             // 
             // JC_Number
             // 
