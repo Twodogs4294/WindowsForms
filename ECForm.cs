@@ -66,5 +66,10 @@ namespace WindowsForms
         {
 
         }
+
+        private void ValueNumber_TextChanged(object sender, EventArgs e)
+        {
+            //HAHAH
+        }
     }
 }
